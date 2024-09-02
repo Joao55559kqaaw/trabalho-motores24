@@ -15,7 +15,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+Debug.Log(message:"START");
         //alvo = GameObject.FindGameObjectWithTag("Player").transform;
         //offset = transform.position - alvo.positivo;
         TryGetComponent(out rb);   
@@ -23,7 +23,7 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Collision.game.Object.tag == "chão")
+        if (collision.gameObject.tag == "chão")
         {
             noChao = true;
         }
@@ -32,6 +32,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(message:"UPDATE");
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 direcao =  new Vector3 (h, 0, v);
