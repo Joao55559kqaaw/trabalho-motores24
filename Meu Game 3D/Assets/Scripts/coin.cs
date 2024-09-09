@@ -10,14 +10,13 @@ public class coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (orther.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
 
 
-            {
+            FindObjectOfType<gameMenage>().SubtrairMoedas(1);
+            Destroy(gameObject);
 
-                Destroy(GameObject);
-            }
         }
 
         void Update()
@@ -25,3 +24,4 @@ public class coin : MonoBehaviour
             transform.Rotate(Vector3.forward * velocidade * Time.deltaTime);
         }
     }
+}
