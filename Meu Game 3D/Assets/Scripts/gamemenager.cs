@@ -8,11 +8,14 @@ public class gameMenage : MonoBehaviour
 {
     public int moedas;
     public TMP_Text hud, msgVitoria;
-
+    
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         moedas = FindObjectsOfType<coin>().Length;
         AtualizandoHud();
 
@@ -21,6 +24,7 @@ public class gameMenage : MonoBehaviour
     public void AtualizandoHud()
     {
         hud.text = $"Moedas restante: {moedas}";
+        
     }
 
     public void SubtrairMoedas(int valor)
